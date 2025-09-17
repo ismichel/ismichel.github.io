@@ -423,6 +423,71 @@
 			box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 		}
 
+		.youtube-embed {
+			text-align: center;
+			margin: 2em auto;
+			max-width: 800px;
+		}
+
+		.youtube-embed a {
+			display: inline-block;
+			position: relative;
+			text-decoration: none;
+		}
+
+		.youtube-embed img {
+			width: 100%;
+			max-width: 800px;
+			height: auto;
+			border-radius: 12px;
+			box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+			transition: transform 0.2s ease, box-shadow 0.2s ease;
+		}
+
+		.youtube-embed img:hover {
+			transform: scale(1.02);
+			box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+		}
+
+		.youtube-play-button {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 80px;
+			height: 80px;
+			background: rgba(255, 255, 255, 0.9);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+			transition: all 0.2s ease;
+		}
+
+		.youtube-play-button:hover {
+			background: rgba(255, 255, 255, 1);
+			transform: translate(-50%, -50%) scale(1.1);
+		}
+
+		.youtube-play-button::before {
+			content: '';
+			width: 0;
+			height: 0;
+			border-left: 24px solid #ff0000;
+			border-top: 16px solid transparent;
+			border-bottom: 16px solid transparent;
+			margin-left: 4px;
+		}
+
+		.youtube-title {
+			text-align: center;
+			margin-top: 15px;
+			font-weight: 600;
+			color: #333;
+			font-size: 16px;
+		}
+
 		.code,
 		code {
 			background: rgba(135, 131, 120, 0.15);
@@ -1026,11 +1091,10 @@
 			</div>
 				<figure id="271706f0-6877-8055-a234-c5b57487b25b" class="youtube-embed">
 					<a href="https://youtu.be/C9BCsmJ8seY" target="_blank">
-						<img src="https://img.youtube.com/vi/C9BCsmJ8seY/maxresdefault.jpg" alt="YouTube Video: Re-Experiencing Memories in VR" style="width: 100%; max-width: 600px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
-						<div style="position: relative; text-align: center; margin-top: 10px;">
-							<span style="background: #ff0000; color: white; padding: 8px 16px; border-radius: 4px; font-weight: bold;">▶ Watch Video</span>
-						</div>
+						<img src="https://img.youtube.com/vi/C9BCsmJ8seY/maxresdefault.jpg" alt="YouTube Video: Re-Experiencing Memories in VR" />
+						<div class="youtube-play-button"></div>
 					</a>
+					<div class="youtube-title">Re-Experiencing Memories in VR</div>
 				</figure>
 			<p id="271706f0-6877-80c4-b61b-e5c3b919f4fa" class="">Our first low-fidelity prototype explored what it
 				might feel like to revisit a memory in virtual reality, specifically within the context of a
@@ -1043,11 +1107,10 @@
 			<h3 id="271706f0-6877-80a5-bff9-c837dc295e57" class=""><em>The Giver</em> and <em>The Receiver</em></h3>
 				<figure id="271706f0-6877-806d-89de-cd09082362c7" class="youtube-embed">
 					<a href="https://www.youtube.com/watch?v=gfjox_U5iuw" target="_blank">
-						<img src="https://img.youtube.com/vi/gfjox_U5iuw/maxresdefault.jpg" alt="YouTube Video: The Giver and The Receiver" style="width: 100%; max-width: 600px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
-						<div style="position: relative; text-align: center; margin-top: 10px;">
-							<span style="background: #ff0000; color: white; padding: 8px 16px; border-radius: 4px; font-weight: bold;">▶ Watch Video</span>
-						</div>
+						<img src="https://img.youtube.com/vi/gfjox_U5iuw/maxresdefault.jpg" alt="YouTube Video: The Giver and The Receiver" />
+						<div class="youtube-play-button"></div>
 					</a>
+					<div class="youtube-title">The Giver and The Receiver</div>
 				</figure>
 			<p id="271706f0-6877-80f3-a011-ceb4c23faf26" class="">Building on our earlier prototype, we began exploring
 				what <em>gifting</em> a memory might look like in augmented reality. As a team, we found ourselves
@@ -1063,11 +1126,10 @@
 			<h3 id="271706f0-6877-8080-968b-dd27102adc00" class="">HMW Discover Memories?</h3>
 				<figure id="271706f0-6877-800e-ba8f-f507451b8cef" class="youtube-embed">
 					<a href="https://www.youtube.com/watch?v=bTFOid0C0Qc" target="_blank">
-						<img src="https://img.youtube.com/vi/bTFOid0C0Qc/maxresdefault.jpg" alt="YouTube Video: HMW Discover Memories" style="width: 100%; max-width: 600px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
-						<div style="position: relative; text-align: center; margin-top: 10px;">
-							<span style="background: #ff0000; color: white; padding: 8px 16px; border-radius: 4px; font-weight: bold;">▶ Watch Video</span>
-						</div>
+						<img src="https://img.youtube.com/vi/bTFOid0C0Qc/maxresdefault.jpg" alt="YouTube Video: HMW Discover Memories" />
+						<div class="youtube-play-button"></div>
 					</a>
+					<div class="youtube-title">HMW Discover Memories?</div>
 				</figure>
 			<p id="271706f0-6877-809e-b84f-e9fb6402250f" class="">In our next iteration, we grounded the prototype in a
 				real memory from one of our team members and began shaping the full end-to-end experience—from discovery
@@ -1086,11 +1148,10 @@
 			<h3 id="271706f0-6877-805b-a247-fc7f00ccf536" class="">What if Memories could be a Social Experience?</h3>
 				<figure id="271706f0-6877-80af-b9b9-d030b5a1d285" class="youtube-embed">
 					<a href="https://www.youtube.com/watch?v=-pYYlLcyUEw" target="_blank">
-						<img src="https://img.youtube.com/vi/-pYYlLcyUEw/maxresdefault.jpg" alt="YouTube Video: Social Memory Experience" style="width: 100%; max-width: 600px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
-						<div style="position: relative; text-align: center; margin-top: 10px;">
-							<span style="background: #ff0000; color: white; padding: 8px 16px; border-radius: 4px; font-weight: bold;">▶ Watch Video</span>
-						</div>
+						<img src="https://img.youtube.com/vi/-pYYlLcyUEw/maxresdefault.jpg" alt="YouTube Video: Social Memory Experience" />
+						<div class="youtube-play-button"></div>
 					</a>
+					<div class="youtube-title">What if Memories could be a Social Experience?</div>
 				</figure>
 			<p id="271706f0-6877-8094-8c96-d31953825d94" class="">While exploring themes of serendipity, we also began
 				to imagine how a more social, playful layer could be integrated into the memory experience. This led to
@@ -1108,11 +1169,10 @@
 			<h3 id="271706f0-6877-8005-a62f-f0db83307f80" class="">Technical Development &amp; Custom Locations</h3>
 				<figure id="271706f0-6877-8099-a16b-f6958b34a4da" class="youtube-embed">
 					<a href="https://youtu.be/5xN2exaTbK4" target="_blank">
-						<img src="https://img.youtube.com/vi/5xN2exaTbK4/maxresdefault.jpg" alt="YouTube Video: Technical Development & Custom Locations" style="width: 100%; max-width: 600px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
-						<div style="position: relative; text-align: center; margin-top: 10px;">
-							<span style="background: #ff0000; color: white; padding: 8px 16px; border-radius: 4px; font-weight: bold;">▶ Watch Video</span>
-						</div>
+						<img src="https://img.youtube.com/vi/5xN2exaTbK4/maxresdefault.jpg" alt="YouTube Video: Technical Development & Custom Locations" />
+						<div class="youtube-play-button"></div>
 					</a>
+					<div class="youtube-title">Technical Development & Custom Locations</div>
 				</figure>
 			<p id="271706f0-6877-80b9-9503-c91b7018aaa3" class="">After rounds of conceptual exploration, we moved into
 				technical development—specifically building our prototype in Snap’s Lens Studio. This transition was
@@ -1144,11 +1204,10 @@
 			<h3 id="271706f0-6877-809f-b642-fd2d9c448fcd" class="">Final Pivot &amp; Image Marker</h3>
 				<figure id="271706f0-6877-8018-aaf1-d28fc30303d5" class="youtube-embed">
 					<a href="https://youtu.be/CCcMNcz4sFc" target="_blank">
-						<img src="https://img.youtube.com/vi/CCcMNcz4sFc/maxresdefault.jpg" alt="YouTube Video: Final Pivot & Image Marker" style="width: 100%; max-width: 600px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
-						<div style="position: relative; text-align: center; margin-top: 10px;">
-							<span style="background: #ff0000; color: white; padding: 8px 16px; border-radius: 4px; font-weight: bold;">▶ Watch Video</span>
-						</div>
+						<img src="https://img.youtube.com/vi/CCcMNcz4sFc/maxresdefault.jpg" alt="YouTube Video: Final Pivot & Image Marker" />
+						<div class="youtube-play-button"></div>
 					</a>
+					<div class="youtube-title">Final Pivot & Image Marker</div>
 				</figure>
 			<p id="271706f0-6877-800f-9cd7-c1e320fb63f0" class="">After weeks of struggling with Custom Locations, we
 				made a final pivot—this time using <strong>Image Marker</strong>, a feature in Lens Studio typically
@@ -1196,11 +1255,10 @@
 			<h3 id="271706f0-6877-80f2-951e-f41d43682be3" class="">Final Video</h3>
 				<figure id="271706f0-6877-80cb-8df8-e735e2523987" class="youtube-embed">
 					<a href="https://www.youtube.com/watch?v=8uevUWEh9kc" target="_blank">
-						<img src="https://img.youtube.com/vi/8uevUWEh9kc/maxresdefault.jpg" alt="YouTube Video: Final Demo - Memories AR Experience" style="width: 100%; max-width: 600px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
-						<div style="position: relative; text-align: center; margin-top: 10px;">
-							<span style="background: #ff0000; color: white; padding: 8px 16px; border-radius: 4px; font-weight: bold;">▶ Watch Final Demo</span>
-						</div>
+						<img src="https://img.youtube.com/vi/8uevUWEh9kc/maxresdefault.jpg" alt="YouTube Video: Final Demo - Memories AR Experience" />
+						<div class="youtube-play-button"></div>
 					</a>
+					<div class="youtube-title">Final Demo - Memories AR Experience</div>
 				</figure>
 			<p id="271706f0-6877-8020-8aba-f7617bd4c8a3" class="">Our final video prototype showcased a complete user
 				journey: entering a meaningful location and re-experiencing a memory captured there in time. The
