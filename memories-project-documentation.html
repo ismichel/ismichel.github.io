@@ -1,0 +1,711 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Final Documentation</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(128, 125, 120, 1);
+	fill: rgba(128, 125, 120, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(199, 121, 69, 1);
+	fill: rgba(199, 121, 69, 1);
+}
+.highlight-yellow {
+	color: rgba(175, 136, 66, 1);
+	fill: rgba(175, 136, 66, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(63, 126, 190, 1);
+	fill: rgba(63, 126, 190, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(174, 96, 133, 1);
+	fill: rgba(174, 96, 133, 1);
+}
+.highlight-red {
+	color: rgba(201, 85, 73, 1);
+	fill: rgba(201, 85, 73, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 111, 200, 0.09);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(128, 125, 120, 1);
+	fill: rgba(128, 125, 120, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(199, 121, 69, 1);
+	fill: rgba(199, 121, 69, 1);
+}
+.block-color-yellow {
+	color: rgba(175, 136, 66, 1);
+	fill: rgba(175, 136, 66, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(63, 126, 190, 1);
+	fill: rgba(63, 126, 190, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(174, 96, 133, 1);
+	fill: rgba(174, 96, 133, 1);
+}
+.block-color-red {
+	color: rgba(201, 85, 73, 1);
+	fill: rgba(201, 85, 73, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(232, 242, 250, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 99, 174, 0.172); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="271706f0-6877-800d-964e-e336851c1741" class="page sans"><header><h1 class="page-title">Final Documentation</h1><p class="page-description"></p></header><div class="page-body"><figure id="271706f0-6877-8085-b8b0-d3b87bc2ca1e" class="image"><a href="Final%20Documentation%20271706f06877800d964ee336851c1741/IMG_3181.jpg"><img style="width:710px" src="Final%20Documentation%20271706f06877800d964ee336851c1741/IMG_3181.jpg"/></a><figcaption>From Left to right: Isabel, John, Katie</figcaption></figure><p id="271706f0-6877-8085-ad50-e691e77c7af5" class="">As part of Stanford’s Design for Extended Realities (DESIGN284) course, our team carried out a project for Snap’s augmented reality glasses, Spectacles, from rudimentary ideation and needfinding to iterative prototyping and putting together a MVP demo with Lens Studio (Snap’s development platform for Spectacles). </p><p id="271706f0-6877-8021-9ca4-e420f163c8c2" class="">
+</p><hr id="271706f0-6877-80db-8841-ee26472ef1db"/><h2 id="271706f0-6877-80bf-91f3-ca7f299529f6" class="">Overview</h2><p id="271706f0-6877-80ec-8268-e4115d4d690f" class="">This project explores the question <mark class="highlight-pink">how might we use augmented reality to deepen our connection to memory</mark>—not just through playback, but by allowing people to revisit, re-embody, and re-engage with personal moments in the physical locations where they happened.</p><p id="271706f0-6877-803e-b7b1-f771c135cb51" class="">Using Snap’s Spectacles, we prototyped a system that lets users leave behind immersive, location-based memory fragments—such as a child having a conversation with a parent, or the memory-maker leaving a message to a loved one—anchored to real-world spaces.</p><p id="271706f0-6877-8016-8c7e-de809d09a1fe" class="">The goal: <mark class="highlight-pink">to increase the </mark><em><mark class="highlight-pink">feeling of presence</mark></em><mark class="highlight-pink"> and offer new ways to emotionally inhabit our past, present, and potential futures.</mark></p><h2 id="271706f0-6877-804e-bdbd-e60ca1d0482a" class="">Problem Statement</h2><p id="271706f0-6877-80fe-b583-ed462f8a8228" class="">Despite how many photos or videos we take, revisiting a memory usually means scrolling through a screen—disconnected from place and presence. We asked:</p><blockquote id="271706f0-6877-80e1-a5b8-c07a4a187bfa" class=""><mark class="highlight-pink">How might we return to a memory, not just recall it—by physically revisiting a space and seeing that moment layered into the world around you?</mark></blockquote><p id="271706f0-6877-801f-9efe-e8d3b824eb0d" class="">Rather than treat memory as something flat and past-tense, we wanted to make it spatial, emotional, and alive.</p><p id="271706f0-6877-808b-b87f-ec97d6c6fc08" class="">
+</p><hr id="271706f0-6877-8038-9d4a-df7e73a9da4a"/><h2 id="271706f0-6877-80f1-a1dc-f306dfc8fa42" class="">Needfinding</h2><p id="271706f0-6877-801e-bfcf-f64c3aff14a5" class="">We spoke with many people to gather feedback on our concept and hear their personal reflections on memory, but one story from a parent judge stood out—she spoke about how children grow up fast, and how heartbreaking it is to lose access to earlier versions of them. Even if you have photos, you never truly <em>see</em> your toddler again, let alone <em>engage</em> with them. This insight revealed a deeper emotional need:<mark class="highlight-pink"> people want to return not just to locations, but to </mark><em><mark class="highlight-pink">states of connection</mark></em>—with others, with themselves, and with time.</p><p id="271706f0-6877-80e6-bdd1-c63f90f96e66" class="">We saw opportunity in designing an experience that didn’t just show memory, but invited people to walk into it.</p><div id="271706f0-6877-80c5-905d-c38a2b438ce7" class="column-list"><div id="271706f0-6877-80bd-873b-db0c89b3471c" style="width:50%" class="column"><figure id="271706f0-6877-80df-91d3-d80074c234ac" class="image"><a href="Final%20Documentation%20271706f06877800d964ee336851c1741/Screenshot_2025-06-10_at_8.59.21_AM.png"><img style="width:331.9921875px" src="Final%20Documentation%20271706f06877800d964ee336851c1741/Screenshot_2025-06-10_at_8.59.21_AM.png"/></a></figure><p id="271706f0-6877-8022-8263-c4c1c46cf8fb" class="">
+</p></div><div id="271706f0-6877-80f6-9130-d9f2910bd3ff" style="width:50%" class="column"><p id="271706f0-6877-80b8-841a-eb5136451ef6" class=""><strong>Interview with Timothy (Katie’s Brother)</strong></p><p id="271706f0-6877-807e-964c-e1f3f11ba6c0" class="">Timothy described a specific room in the library as sacred: a place where he plays Dungeons &amp; Dragons and experiences a rich, multi-sensory layer of memory—from background sounds to objects and rituals like using special dice. He vividly recalled these details from memory alone, describing how ephemeral digital moments like “bits” or messages fade, while tactile cues endure.</p><p id="271706f0-6877-80ae-be0f-fef83c8361a0" class="">
+</p><p id="271706f0-6877-80ea-a4ba-f63f1e77f4f9" class=""><strong>Insight:</strong> <mark class="highlight-pink">Memory is multisensory and ritual-based</mark>. People form emotional attachments to not just events but the objects, sounds, and routines that contextualize them—especially when revisited regularly in the same space.</p></div></div><div id="271706f0-6877-8039-b386-edc4e8013f59" class="column-list"><div id="271706f0-6877-8060-91c3-d3f798dd1513" style="width:50%" class="column"><p id="271706f0-6877-8035-844f-f3b7ffb9c5a4" class=""><strong>Students at the Product Realization Lab</strong></p><p id="271706f0-6877-80f4-af9b-de7ea6c09328" class="">When asked about meaningful creations, makers and engineers at Stanford’s maker’s lab consistently tied stories to specific tools or corners of the lab. Their memories were less about the finished product and more about <em>where</em> and <em>how</em> it was made.</p><p id="271706f0-6877-8076-8487-d430df93677e" class="">
+</p><p id="271706f0-6877-80b2-a644-e9071ce73e4b" class=""><strong>Insight:</strong> The act of making imbues space with personal significance. <mark class="highlight-pink">Physical creation transforms otherwise neutral locations into memory anchors</mark>, suggesting that AR memory revisits could be more compelling when layered over personally meaningful environments.</p></div><div id="271706f0-6877-808f-ad7f-e869dde03152" style="width:50%" class="column"><figure id="271706f0-6877-8045-830c-cdffbf089a8b" class="image"><a href="Final%20Documentation%20271706f06877800d964ee336851c1741/DSC02440.jpeg"><img style="width:331.9921875px" src="Final%20Documentation%20271706f06877800d964ee336851c1741/DSC02440.jpeg"/></a></figure><p id="271706f0-6877-807f-a418-de1ccfb56603" class="">
+</p></div></div><div id="271706f0-6877-8017-928f-e30f83c02b29" class="column-list"><div id="271706f0-6877-80d6-bcc7-d1599efe258b" style="width:50%" class="column"><figure id="271706f0-6877-8095-ba8e-d6bb62e35ec4" class="image"><a href="Final%20Documentation%20271706f06877800d964ee336851c1741/Screenshot_2025-06-10_at_8.53.40_AM.png"><img style="width:384px" src="Final%20Documentation%20271706f06877800d964ee336851c1741/Screenshot_2025-06-10_at_8.53.40_AM.png"/></a></figure><p id="271706f0-6877-8095-88f9-e5b3b4005c04" class="">
+</p></div><div id="271706f0-6877-803d-a8dc-e62b6e044946" style="width:50%" class="column"><p id="271706f0-6877-80f7-9ff3-ed60927aa5aa" class=""><strong>Interview with Devon (Parent)</strong></p><p id="271706f0-6877-8052-b278-fdcd9c6de6d6" class="">Devon reflected on the scarcity of recorded memories from his own childhood and contrasted that with how intentionally he and his wife document their daughter Blake’s life. From regular photo and video collection to writing her bi-monthly emails, the act of memory collection became an act of devotion, one meant to be <em>gifted</em> years later.</p><p id="271706f0-6877-8078-8c55-ed33d269b1e8" class="">
+</p><p id="271706f0-6877-80f3-b762-f51490ec83fd" class=""><strong>Insight:</strong> <mark class="highlight-pink">When the purpose of memory is gifting—not just archiving—people are willing to invest tremendous care and time. </mark>Memory, in this context, becomes a <em>relational offering</em>, suggesting that AR memories could be designed as time capsules or emotional inheritances for future selves or loved ones.</p><p id="271706f0-6877-8005-b684-e533364053a2" class="">
+</p></div></div><p id="271706f0-6877-80e0-a1c4-ef027afd09bc" class="">
+</p><p id="271706f0-6877-80db-8a7c-e0e9eedf41db" class="">Across all these conversations, one insight stood out: memory is more than recollection—it’s <em>relocation</em>. <mark class="highlight-pink">People want to go back to the </mark><em><mark class="highlight-pink">feeling</mark></em><mark class="highlight-pink"> of a moment, and location is often the strongest trigger for that emotional transport</mark>. Whether it&#x27;s a parent longing to re-engage with their toddler in a favorite park, or a maker feeling deeply tied to a machine they used alone late at night, the intersection of place and emotion forms the core of memory’s richness.</p><p id="271706f0-6877-80b4-b629-c99a00cd5315" class="">This insight shaped our prototyping direction to focus on designing <em><mark class="highlight-pink">presence-rich, spatially anchored memory experiences</mark></em>. These would invite users to physically return to meaningful locations to see, hear, and <em>feel</em> the past layered into the present—sometimes to relive, sometimes to gift, and sometimes to heal. This became the foundation of our design iterations.<br/></p><hr id="271706f0-6877-80dc-a126-f13723f78b50"/><h2 id="271706f0-6877-803e-b523-cd9165669fed" class="">Prototyping</h2><h3 id="271706f0-6877-8040-92cc-c7c839495b04" class=""><strong>First Ideation Session — Let’s Focus on Memories!</strong></h3><div id="271706f0-6877-8087-838c-f1bb2b64ae26" class="column-list"><div id="271706f0-6877-80fa-83c1-dde3f6e6078f" style="width:50%" class="column"><figure id="271706f0-6877-8030-b132-d80e2ff03e38" class="image"><a href="Final%20Documentation%20271706f06877800d964ee336851c1741/IMG_8170.jpeg"><img style="width:5712px" src="Final%20Documentation%20271706f06877800d964ee336851c1741/IMG_8170.jpeg"/></a></figure></div><div id="271706f0-6877-807c-a1b5-ec81236b4cc1" style="width:50%" class="column"><figure id="271706f0-6877-80d7-aeab-e1129cccb092" class="image"><a href="Final%20Documentation%20271706f06877800d964ee336851c1741/287FDF20-B602-4732-BA56-8472EB6443B7_4_5005_c.jpeg"><img style="width:332px" src="Final%20Documentation%20271706f06877800d964ee336851c1741/287FDF20-B602-4732-BA56-8472EB6443B7_4_5005_c.jpeg"/></a></figure></div></div><p id="271706f0-6877-806e-bb72-f1f36f9629cd" class="">From our very first meeting, we were drawn to the idea of designing around memory. Something about AR’s potential to let people <em>immerse </em>themselves in a memory—rather than just observe it—deeply resonated with us. At the time, we didn’t yet know what that experience would look like, but we knew it was worth exploring.</p><p id="271706f0-6877-80b9-a303-dd9170780a1b" class="">
+</p><h3 id="271706f0-6877-80fe-b184-ff727bb8e087" class="">Re-Experiencing Memories in VR with Someone</h3><div id="271706f0-6877-80dd-9511-f28e6c9e9e9d" class="column-list"><div id="271706f0-6877-80df-b505-f22d32a3a3e3" style="width:50%" class="column"><figure id="271706f0-6877-80f2-b9f2-d2400b22cba4" class="image"><a href="Final%20Documentation%20271706f06877800d964ee336851c1741/Screenshot_2025-06-10_at_9.37.22_AM.png"><img style="width:384px" src="Final%20Documentation%20271706f06877800d964ee336851c1741/Screenshot_2025-06-10_at_9.37.22_AM.png"/></a></figure></div><div id="271706f0-6877-80b6-815f-f5b802cf3bd6" style="width:50%" class="column"><figure id="271706f0-6877-80ec-a4fe-dd5fb0025f36" class="image"><a href="Final%20Documentation%20271706f06877800d964ee336851c1741/Screenshot_2025-06-10_at_9.37.00_AM.png"><img style="width:332px" src="Final%20Documentation%20271706f06877800d964ee336851c1741/Screenshot_2025-06-10_at_9.37.00_AM.png"/></a></figure></div></div><figure id="271706f0-6877-8055-a234-c5b57487b25b"><div class="source"><a href="https://youtu.be/C9BCsmJ8seY">https://youtu.be/C9BCsmJ8seY</a></div></figure><p id="271706f0-6877-80c4-b61b-e5c3b919f4fa" class="">Our first low-fidelity prototype explored what it might feel like to revisit a memory in virtual reality, specifically within the context of a long-distance relationship—or any relationship shaped by physical separation. We imagined a shared “third space” where two individuals wearing VR headsets could meet and then portal into a pre-recorded memory, such as a concert. This early concept focused on the themes of gifting and co-experiencing memory, even across distance.</p><p id="271706f0-6877-8053-af4a-e5434a3d6ea7" class="">
+</p><h3 id="271706f0-6877-80a5-bff9-c837dc295e57" class=""><em>The Giver</em> and <em>The Receiver</em></h3><figure id="271706f0-6877-806d-89de-cd09082362c7"><div class="source"><a href="https://www.youtube.com/watch?v=gfjox_U5iuw">https://www.youtube.com/watch?v=gfjox_U5iuw</a></div></figure><p id="271706f0-6877-80f3-a011-ceb4c23faf26" class="">Building on our earlier prototype, we began exploring what <em>gifting</em> a memory might look like in augmented reality. As a team, we found ourselves increasingly drawn to AR—specifically Snap’s Spectacles—because we wanted to blur the line between the virtual and the real, embedding memory into lived experience rather than replacing it.</p><p id="271706f0-6877-806e-8306-de0b8c38a87f" class="">In this next phase, we focused on the relationship between the <em>giver</em>—the creator of a personal message or memory—and the <em>receiver</em>, the person who would later encounter and experience it. This dynamic opened up new questions around authorship, timing, and emotional impact: What does it mean to leave a memory for someone in a place? And what does it feel like to discover it?</p><p id="271706f0-6877-805e-95e2-d50b735a6749" class="">
+</p><h3 id="271706f0-6877-8080-968b-dd27102adc00" class="">HMW Discover Memories?</h3><figure id="271706f0-6877-800e-ba8f-f507451b8cef"><div class="source"><a href="https://www.youtube.com/watch?v=bTFOid0C0Qc">https://www.youtube.com/watch?v=bTFOid0C0Qc</a></div></figure><p id="271706f0-6877-809e-b84f-e9fb6402250f" class="">In our next iteration, we grounded the prototype in a real memory from one of our team members and began shaping the full end-to-end experience—from discovery to reflection. After discussing our direction with our advisor Amber and others, the idea of <em>serendipity</em> emerged as a powerful design principle. Inspired by this, we created a prototype where “memory bubbles” would appear unexpectedly in locations where the user had previously captured footage.</p><p id="271706f0-6877-809d-8fbd-e0cbf53142d5" class="">This marked our first attempt at designing a truly <em>location-based</em> memory experience. In this flow, the user encounters a subtle prompt—a bubble—that nudges them to engage. Upon entering it, they are transported into an immersive, emotionally resonant moment from their past. At the conclusion of the experience, they’re invited to reflect and share the moment with the people featured in the memory itself. This prototype allowed us to explore not just presence and place, but also surprise, emotional timing, and reconnection.</p><p id="271706f0-6877-805d-94be-c92720d0d55e" class="">
+</p><h3 id="271706f0-6877-805b-a247-fc7f00ccf536" class="">What if Memories could be a Social Experience?</h3><figure id="271706f0-6877-80af-b9b9-d030b5a1d285"><div class="source"><a href="https://www.youtube.com/watch?v=-pYYlLcyUEw">https://www.youtube.com/watch?v=-pYYlLcyUEw</a></div></figure><p id="271706f0-6877-8094-8c96-d31953825d94" class="">While exploring themes of serendipity, we also began to imagine how a more social, playful layer could be integrated into the memory experience. This led to the concept of <em>Snaparazzi</em>—a game-like feature embedded within Snapchat where friends participate by secretly capturing candid photos of one another. Later, the subject of the photo would serendipitously discover that a moment of theirs had been recorded.</p><p id="271706f0-6877-8074-8b2a-fc5201d8fba1" class="">The idea was motivated by a key insight: people tend to feel more emotionally connected to memories where <em>they themselves</em> are the subject—not just the photographer. We wanted to experiment with whether it was possible to <em>generate more memories where the user is present in the frame</em>, without making the process feel staged or self-conscious. Snaparazzi became a playful attempt at prompting surprise, delight, and connection through unexpected self-reflection.</p><p id="271706f0-6877-8023-98e7-d4000c87d511" class="">
+</p><h3 id="271706f0-6877-8005-a62f-f0db83307f80" class="">Technical Development &amp; Custom Locations</h3><figure id="271706f0-6877-8099-a16b-f6958b34a4da"><div class="source"><a href="https://youtu.be/5xN2exaTbK4">https://youtu.be/5xN2exaTbK4</a></div></figure><p id="271706f0-6877-80b9-9503-c91b7018aaa3" class="">After rounds of conceptual exploration, we moved into technical development—specifically building our prototype in Snap’s Lens Studio. This transition was challenging, particularly when we began working with a feature called <strong>Custom Locations</strong>.</p><p id="271706f0-6877-8003-891e-d97b47465c8c" class="">Custom Locations is a powerful tool for Spectacles that enables creators to scan real-world environments and anchor AR content to specific physical geometries. We saw enormous potential in this—imagine walking up to the iconic <a href="http://d.school">d.school</a> bus and having a memory experience unfold, precisely anchored to the contours of that space. Combined with Spectacles’ spatial persistence, Custom Locations promised a way to make our memories feel <em>truly situated</em> in the world.</p><p id="271706f0-6877-80bc-a8c0-cbe38aa83be7" class="">However, implementation proved far more difficult than expected. Debugging this feature consumed nearly three weeks, during which we tried every online resource, spoke with Snap representatives, and repeatedly tested new builds—without success. In hindsight, we recognize that we could’ve pivoted earlier, but we were deeply invested in making it work. The potential felt too aligned with our vision to abandon quickly.</p><p id="271706f0-6877-80f2-a70d-c7afcbe3443e" class="">Despite the technical hurdles, this prototype still allowed us to communicate the <em>feeling</em> of our intended experience. In user testing, we gathered meaningful feedback on interaction design and UI elements. One memorable moment came when a judge recoiled at Henry’s sudden entrance in a memory video, describing the experience as intrusive. This highlighted the need for <strong>user agency</strong>—people should have control over whether or not a memory plays. We carried that learning into our final design, ensuring experiences were always initiated by the user, not imposed.</p><p id="271706f0-6877-8064-b0cd-f38bdffe94d4" class="">This stage reminded us that even when technology falls short, well-framed prototypes can still test emotional resonance, narrative flow, and interaction expectations.</p><p id="271706f0-6877-8071-80d4-da6d3b4387eb" class="">
+</p><h3 id="271706f0-6877-809f-b642-fd2d9c448fcd" class="">Final Pivot &amp; Image Marker</h3><figure id="271706f0-6877-8018-aaf1-d28fc30303d5"><div class="source"><a href="https://youtu.be/CCcMNcz4sFc">https://youtu.be/CCcMNcz4sFc</a></div></figure><p id="271706f0-6877-800f-9cd7-c1e320fb63f0" class="">After weeks of struggling with Custom Locations, we made a final pivot—this time using <strong>Image Marker</strong>, a feature in Lens Studio typically used to animate book covers or product labels. Image Marker allows developers to trigger AR content when a specific visual pattern is recognized through the phone or Spectacles. While not as spatially rich as a full 3D scan, it offered us a reliable alternative: we could still anchor memory experiences to physical locations, but through a <em>visual marker</em> instead of the surrounding geometry.</p><p id="271706f0-6877-8071-855d-e97400548283" class="">This shift introduced a tradeoff. Using a printed or physical marker added another point of interaction, which risked friction or breaking immersion. But at this stage, it became a necessary constraint, and we focused on making it feel intentional and personal—almost like a secret key unlocking the memory of a place.</p><p id="271706f0-6877-805d-a98e-ccf854f852ab" class="">Our first Image Marker prototype involved one of us filming an overlay memory at our lab, choosing a spot unlikely to physically change in the coming years. The goal was to transform a familiar, everyday environment into something more like a <em>personal museum</em>. A future visitor could return to the same location, scan a visual marker, and unlock an AR memory or message crafted just for them.</p><p id="271706f0-6877-8014-9262-e0648e52d2ea" class="">This prototype also introduced the idea of a <strong>totem</strong>—a tangible object that appears in the video overlay and holds symbolic weight. Users could see this item in both the virtual and physical realms, creating a sense of presence and emotional anchoring. The totem served as both a visual trigger and a memory artifact, making the experience more immersive and meaningful.</p><p id="271706f0-6877-80ac-8e72-f78bac3db336" class="">When we shared this demo during Week 9, the response was especially strong among our advisors who were parents. One advisor mentioned how powerful it would be to have this kind of experience in their home—being able to walk into a room and see an overlay of their child playing there years ago, as if time had gently folded in on itself. This feedback gave us clear emotional validation and a compelling direction.</p><p id="271706f0-6877-808c-bac8-fe1a3559934d" class="">For our final demo, we invited Devan and his daughter Blake for a dedicated user interview session. We centered the project around <strong>emotionally rich, location-based re-living of memories</strong>, particularly focusing on joy and presence in the parent-child relationship. The goal was no longer just technical—it was to make something emotionally resonant, something that could hold time gently, and give people a way to walk back into the love they once lived.</p><p id="271706f0-6877-80c6-9414-d92f03a16375" class="">
+</p><hr id="271706f0-6877-8052-88c4-f188e79c196c"/><h2 id="271706f0-6877-8001-ac37-d9497e1c0724" class="">Results </h2><h3 id="271706f0-6877-80bf-9f95-e0b41ecddf1d" class="">Demo</h3><figure id="271706f0-6877-8034-9f82-caa05d4ba1f7"><div class="source"><a href="Final%20Documentation%20271706f06877800d964ee336851c1741/EXPO_DEMO.zip">EXPO_DEMO.zip</a></div></figure><p id="271706f0-6877-8020-9453-c16c012a0f34" class="">
+</p><h3 id="271706f0-6877-80f2-951e-f41d43682be3" class="">Final Video</h3><figure id="271706f0-6877-80cb-8df8-e735e2523987"><div class="source"><a href="https://www.youtube.com/watch?v=8uevUWEh9kc">https://www.youtube.com/watch?v=8uevUWEh9kc</a></div></figure><p id="271706f0-6877-8020-8aba-f7617bd4c8a3" class="">Our final video prototype showcased a complete user journey: entering a meaningful location and re-experiencing a memory captured there in time. The interaction begins with the user approaching a subtle <strong>image marker</strong>—once revealed, it triggers a still overlay image that anchored them in place. By pinching the play button, the user can then watch the recorded memory unfold, precisely where it was once made.</p><p id="271706f0-6877-803d-8690-f4faecacb895" class="">To make the experience as immersive as possible, we paid close attention to the design of every visual layer. Static images were refined in <strong>Adobe Illustrator</strong>, using soft, fading borders to ease the transition between AR content and the real world. For video overlays, we used <strong>Adobe Premiere Pro</strong> to create a dreamy, transparent effect: we drew freeform Gaussian blur masks around focal areas of each video and applied high feathering. A second opacity mask was layered on top, giving the outer edges a gentle fade—so the memory felt like it was bleeding into reality rather than interrupting it.</p><p id="271706f0-6877-80cf-8a0d-f292d78b8e52" class="">We also introduced <strong>totems</strong>—small, personal 3D objects tied to the emotional core of each memory. These were modeled using a combination of AI-generated concepts and hand-tuned CAD design. For the father-daughter story, it was a magic wand. For Katie’s graduation memory, a beloved music binder. For John’s, a coffee dripper he had built in a different class. Each totem appeared both physically and virtually, reinforcing the presence of the past in the present.</p><p id="271706f0-6877-8013-ac03-f282dceae626" class="">All of these elements came together for our <strong>final walkthrough at the project expo</strong>, where visitors could wander through the installation and encounter memories left behind. Though these messages weren’t meant for them, the emotional themes—parenthood, transition, creativity—were universal. Guests could empathize, reflect, and even imagine their own memories layered into the spaces around them.</p><p id="271706f0-6877-806c-ab70-edee9c0997fe" class="">One emotional moment stood out when a father of two daughters paused after experiencing the demo and said, </p><blockquote id="271706f0-6877-80c4-8e70-eec467a7adcd" class=""><em>“I would pay anything to have something like this of my girls when they were little.”</em> </blockquote><p id="271706f0-6877-8010-ac72-fa1346bd8c54" class="">That response validated the emotional power of what we were building. In the end, we believe we created more than just a prototype—we uncovered a starting point for a new kind of memory experience: one that lives in space, unfolds over time, and brings people back to what matters most.</p><p id="271706f0-6877-8041-bc12-d9b2704c2e5a" class="">
+</p><h3 id="271706f0-6877-80ed-b42d-c19f52f048be" class="">Expo</h3><div id="271706f0-6877-8086-9dd8-dea686a50bac" class="column-list"><div id="271706f0-6877-8008-a81a-feb85c31fda6" style="width:50%" class="column"><figure id="271706f0-6877-8014-bd34-d0211affb41e" class="image"><a href="Final%20Documentation%20271706f06877800d964ee336851c1741/IMG_3162.heic"><img src="Final%20Documentation%20271706f06877800d964ee336851c1741/IMG_3162.heic"/></a></figure></div><div id="271706f0-6877-80a3-8d5f-d341a7a85dcc" style="width:50%" class="column"><figure id="271706f0-6877-8096-b02e-d662b37a4542" class="image"><a href="Final%20Documentation%20271706f06877800d964ee336851c1741/IMG_3163.heic"><img src="Final%20Documentation%20271706f06877800d964ee336851c1741/IMG_3163.heic"/></a></figure></div></div><div id="271706f0-6877-80a7-b467-ecae3cb9949e" class="column-list"><div id="271706f0-6877-80e7-b06d-f88a03ae6edd" style="width:50%" class="column"><figure id="271706f0-6877-80f3-8ad2-f9380d16ec64" class="image"><a href="Final%20Documentation%20271706f06877800d964ee336851c1741/IMG_3164.heic"><img src="Final%20Documentation%20271706f06877800d964ee336851c1741/IMG_3164.heic"/></a></figure></div><div id="271706f0-6877-80b2-8ef7-dc6812923aee" style="width:50%" class="column"><figure id="271706f0-6877-80b9-8290-e5350ec5829b" class="image"><a href="Final%20Documentation%20271706f06877800d964ee336851c1741/IMG_3165.heic"><img src="Final%20Documentation%20271706f06877800d964ee336851c1741/IMG_3165.heic"/></a></figure></div></div><div id="271706f0-6877-8001-9b02-d1c6d91ee1e8" class="column-list"><div id="271706f0-6877-80e6-8889-ec0fefb8658e" style="width:50%" class="column"><figure id="271706f0-6877-8005-90f4-d6b7d6cb4b28" class="image"><a href="Final%20Documentation%20271706f06877800d964ee336851c1741/IMG_3167.heic"><img src="Final%20Documentation%20271706f06877800d964ee336851c1741/IMG_3167.heic"/></a></figure></div><div id="271706f0-6877-80b0-9ae3-defe0d8a0619" style="width:50%" class="column"><figure id="271706f0-6877-8024-8297-c5f58f15fc81" class="image"><a href="Final%20Documentation%20271706f06877800d964ee336851c1741/IMG_3168.heic"><img src="Final%20Documentation%20271706f06877800d964ee336851c1741/IMG_3168.heic"/></a></figure></div></div><div id="271706f0-6877-80c8-b2d2-e4b141f7d505" class="column-list"><div id="271706f0-6877-8084-ab4d-e53275b3625f" style="width:50%" class="column"><figure id="271706f0-6877-80ec-9267-d427197ee419" class="image"><a href="Final%20Documentation%20271706f06877800d964ee336851c1741/IMG_3170.heic"><img src="Final%20Documentation%20271706f06877800d964ee336851c1741/IMG_3170.heic"/></a></figure></div><div id="271706f0-6877-8059-9130-c7c67c39cb0b" style="width:50%" class="column"><figure id="271706f0-6877-8053-93bd-d7b7d5c5d34f" class="image"><a href="Final%20Documentation%20271706f06877800d964ee336851c1741/IMG_3171.heic"><img src="Final%20Documentation%20271706f06877800d964ee336851c1741/IMG_3171.heic"/></a></figure></div></div><div id="271706f0-6877-800b-880a-d01115234f3a" class="column-list"><div id="271706f0-6877-80b6-a27f-c22bdc85f723" style="width:50%" class="column"><figure id="271706f0-6877-80be-8894-e4304c900d8a" class="image"><a href="Final%20Documentation%20271706f06877800d964ee336851c1741/IMG_3172.heic"><img src="Final%20Documentation%20271706f06877800d964ee336851c1741/IMG_3172.heic"/></a></figure></div><div id="271706f0-6877-80b0-8180-e7eba126b32e" style="width:50%" class="column"><figure id="271706f0-6877-802d-8308-d2169da4ac12" class="image"><a href="Final%20Documentation%20271706f06877800d964ee336851c1741/IMG_3173.heic"><img src="Final%20Documentation%20271706f06877800d964ee336851c1741/IMG_3173.heic"/></a></figure></div></div><div id="271706f0-6877-80a1-a11c-c90fac4927af" class="column-list"><div id="271706f0-6877-8023-89d0-f53c0c5084b5" style="width:50%" class="column"><figure id="271706f0-6877-808d-922b-e2e001258762" class="image"><a href="Final%20Documentation%20271706f06877800d964ee336851c1741/DEC5D155-9C44-42D1-8906-C4216EFB707C.jpeg"><img style="width:4000px" src="Final%20Documentation%20271706f06877800d964ee336851c1741/DEC5D155-9C44-42D1-8906-C4216EFB707C.jpeg"/></a></figure><p id="271706f0-6877-807d-8003-d250d8f26353" class="">
+</p></div><div id="271706f0-6877-80df-8606-eb8a369328e6" style="width:50%" class="column"><figure id="271706f0-6877-80b4-abff-f0340688251f" class="image"><a href="Final%20Documentation%20271706f06877800d964ee336851c1741/0636CDE4-6AE9-4EC9-B5E8-1BEA25543804_1_105_c.jpeg"><img style="width:331.9921875px" src="Final%20Documentation%20271706f06877800d964ee336851c1741/0636CDE4-6AE9-4EC9-B5E8-1BEA25543804_1_105_c.jpeg"/></a></figure><p id="271706f0-6877-80c7-979c-fbea0bcf9ce2" class="">
+</p></div></div><hr id="271706f0-6877-804e-b63a-d112a9b555fd"/><p id="271706f0-6877-8074-a057-f6a60c989e08" class="">
+</p><h2 id="271706f0-6877-8019-a637-f954ebcab7c6" class="">Reflection</h2><p id="271706f0-6877-804b-a528-eb06acfd45b7" class="">While we held on to our initial spark of inspiration– the potential for extended reality to create deeply immersive memory experiences– <strong>we pivoted several times</strong> throughout the 10-week quarter, starting with a VR sharing concept, switching to a location-based AR concept, thinking of a “game” structure that might motivate users to put on their glasses and finally returning to location-based AR for the final demo. While this extensive ideation allowed us to explore different concepts, because of the limited time frame of the class, <strong>it did detract from testing and building</strong>. We generated a breadth of ideas, but we had difficulty narrowing down our thoughts and often spent weeks discussing rather than prototyping.</p><p id="271706f0-6877-80c8-970e-e125e43dc1b4" class="">In our original plan, our demo heavily relied on the<strong> Custom Locations</strong> technology for Snap Spectacles, but, despite significant efforts, we were <strong>unable to implement the feature</strong>. Thus, we had to make a last-minute pivot to Image Marker recognition. While our demo ultimately worked, we did have to do intensive building and debugging sessions during the last week of class.</p><p id="271706f0-6877-804d-9133-cba987abd4fc" class=""><strong>Despite these missteps, we still feel our project was successful</strong>. Our “north star” throughout this process was to engage users emotionally, letting them re-live moments across time, and we believe we were able to create that core experience. Several Expo guests commented on <strong>how immersed they felt in our demo</strong>, describing their sense of connection to the memories. <strong>Many said they would love to use our application</strong> to store and view their own recollections. A few came to our booth because they had <strong>heard about it from other guests</strong> who were excited by our idea. <strong>Ultimately, we are proud of the insights we generated and the demo we created</strong>.</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
