@@ -32,6 +32,7 @@ a {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 14px;
   font-display: auto;
+  line-height: 1.6;
 }
 
 strong {
@@ -97,6 +98,40 @@ h1 {
 
 span.highlight {
   background-color: #ffffd0;
+}
+
+// Portfolio-specific styles
+.project-card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.skill-tag {
+  transition: all 0.2s ease-in-out;
+}
+
+.skill-tag:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+// Responsive design improvements
+@media (max-width: 768px) {
+  body, td, th, tr, p, a {
+    font-size: 13px;
+  }
+  
+  h1 {
+    font-size: 28px;
+  }
+  
+  h2 {
+    font-size: 20px;
+  }
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS

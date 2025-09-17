@@ -21,6 +21,23 @@
   <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  
+  <script>
+    function toggleProjectDetails(projectId) { 
+      var details = document.getElementById('details-' + projectId);
+      var button = event.target;
+      
+      if (details.style.display === 'none') {
+        details.style.display = 'block';
+        button.textContent = 'Show Less';
+        button.style.background = '#f44336';
+      } else {
+        details.style.display = 'none';
+        button.textContent = 'Learn More';
+        button.style.background = '#4CAF50';
+      }
+    }
+  </script>
 
 </head>
 
@@ -50,10 +67,13 @@
                 -webkit-text-fill-color: transparent;">
                 Isabel Michel
               </h1>
-              <p>I am a Master's student in <a href="https://cs.stanford.edu">Computer Science</a>, part of the <a href="https://engineering.stanford.edu">School of Engineering</a> at <a href="https://www.stanford.edu/">Stanford University</a>. I matriculated in 2023 and am specializing in Artificial Intelligence.
+              <p>I am a Master's student in <a href="https://cs.stanford.edu">Computer Science</a> at <a href="https://www.stanford.edu/">Stanford University</a>, specializing in Artificial Intelligence. I'm passionate about building innovative solutions that bridge technology and human needs.
               </p>
               <p>
-                Previously, I received my Bachelor's degree from <a href="https://www.stanford.edu/">Stanford University</a> between 2017 and 2023, where I majored in <a href="https://humanbiology.stanford.edu/">Human Biology</a>. 
+                With a unique background combining <a href="https://humanbiology.stanford.edu/">Human Biology</a> and Computer Science, I bring a multidisciplinary approach to solving complex problems. I enjoy working on projects that have real-world impact, from machine learning applications to interactive systems.
+              </p>
+              <p>
+                <strong>Currently seeking:</strong> opportunities in software engineering, data science, or AI/ML roles.
               </p>
               <p style="text-align:center">
                 <a target="_blank" href="https://mailhide.io/e/wADh5h2J">Email</a> &nbsp;/&nbsp;
@@ -112,7 +132,7 @@
           <tr>
             <td style="padding:2.5%;width:100%;vertical-align:middle">
               <h2 style="background: rgb(174, 207, 188)">Technical Projects</h2>
-              <p> These include coursework and side projects. 
+              <p> A showcase of my technical work including coursework, side projects, and research. Click "Learn More" to explore detailed descriptions, creation process, and demo videos.
               </p>
             </td>
           </tr>
@@ -124,7 +144,7 @@
           {% if cat == 'other' %}
           <tr>
             <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-              <img src="{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
+              <img src="{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
             </td>
             <td style="padding:2.5%;width:75%;vertical-align:middle">
               <h3>{{post.title}}</h3>
@@ -137,26 +157,67 @@
               {{ post.date | date: "%Y-%m" }}
 
               <br>
-              {% if post.website %}
-              <a href="{{post.website}}">website</a> /
-              {% endif %}
-              {% if post.paper %}
-              <a href="{{post.paper}}">paper</a> /
-              {% endif %}
-              {% if post.video %}
-              <a href="{{post.video}}">video</a> /
-              {% endif %}
-              {% if post.code %}
-              <a href="{{post.code}}">code</a> /
-              {% endif %}
-              {% if post.poster %}
-              <a href="{{post.poster}}">poster</a> /
-              {% endif %}
-              {% if post.slides %}
-              <a href="{{post.slides}}">slides</a> /
-              {% endif %}
+              <div style="margin: 10px 0;">
+                {% if post.website %}
+                <a href="{{post.website}}" style="background: #f0f0f0; padding: 4px 8px; border-radius: 4px; text-decoration: none; margin-right: 5px; font-size: 12px;">website</a>
+                {% endif %}
+                {% if post.paper %}
+                <a href="{{post.paper}}" style="background: #f0f0f0; padding: 4px 8px; border-radius: 4px; text-decoration: none; margin-right: 5px; font-size: 12px;">paper</a>
+                {% endif %}
+                {% if post.video %}
+                <a href="{{post.video}}" style="background: #f0f0f0; padding: 4px 8px; border-radius: 4px; text-decoration: none; margin-right: 5px; font-size: 12px;">video</a>
+                {% endif %}
+                {% if post.code %}
+                <a href="{{post.code}}" style="background: #f0f0f0; padding: 4px 8px; border-radius: 4px; text-decoration: none; margin-right: 5px; font-size: 12px;">code</a>
+                {% endif %}
+                {% if post.poster %}
+                <a href="{{post.poster}}" style="background: #f0f0f0; padding: 4px 8px; border-radius: 4px; text-decoration: none; margin-right: 5px; font-size: 12px;">poster</a>
+                {% endif %}
+                {% if post.slides %}
+                <a href="{{post.slides}}" style="background: #f0f0f0; padding: 4px 8px; border-radius: 4px; text-decoration: none; margin-right: 5px; font-size: 12px;">slides</a>
+                {% endif %}
+              </div>
               <p></p>
               {{ post.excerpt }}
+              
+              {% if post.detailed_description or post.demo_video or post.creation_process %}
+              <div style="margin-top: 15px;">
+                <button onclick="toggleProjectDetails('{{post.title | slugify}}')" style="background: #4CAF50; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 14px;">
+                  Learn More
+                </button>
+              </div>
+              
+              <div id="details-{{post.title | slugify}}" style="display: none; margin-top: 15px; padding: 15px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #4CAF50;">
+                {% if post.detailed_description %}
+                <h4 style="margin-top: 0; color: #333;">Project Overview</h4>
+                <p>{{post.detailed_description}}</p>
+                {% endif %}
+                
+                {% if post.creation_process %}
+                <h4 style="color: #333;">Creation Process</h4>
+                <p>{{post.creation_process}}</p>
+                {% endif %}
+                
+                {% if post.demo_video %}
+                <h4 style="color: #333;">Demo Video</h4>
+                <div style="text-align: center; margin: 10px 0;">
+                  <video controls style="max-width: 100%; height: auto; border-radius: 8px;">
+                    <source src="{{post.demo_video}}" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                {% endif %}
+                
+                {% if post.technologies %}
+                <h4 style="color: #333;">Technologies Used</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+                  {% for tech in post.technologies %}
+                  <span style="background: #e3f2fd; color: #1976d2; padding: 4px 8px; border-radius: 12px; font-size: 12px;">{{tech}}</span>
+                  {% endfor %}
+                </div>
+                {% endif %}
+              </div>
+              {% endif %}
             </td>
           </tr>
           {% endif %}
@@ -164,6 +225,71 @@
           {% endfor %}
         </table>
         
+        <br>
+        <br>
+        <br>
+        
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          <tr>
+            <td style="padding:2.5%;width:100%;vertical-align:middle">
+              <h2 style="background: rgb(255, 193, 7)">Technical Skills</h2>
+              <p>Technologies and tools I work with.
+              </p>
+            </td>
+          </tr>
+        </table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          <tr>
+            <td style="padding:2.5%;width:100%;vertical-align:middle">
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                <div>
+                  <h4 style="color: #333; margin-bottom: 10px;">Programming Languages</h4>
+                  <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+                    <span style="background: #e3f2fd; color: #1976d2; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Python</span>
+                    <span style="background: #e3f2fd; color: #1976d2; padding: 4px 8px; border-radius: 12px; font-size: 12px;">JavaScript</span>
+                    <span style="background: #e3f2fd; color: #1976d2; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Java</span>
+                    <span style="background: #e3f2fd; color: #1976d2; padding: 4px 8px; border-radius: 12px; font-size: 12px;">C++</span>
+                    <span style="background: #e3f2fd; color: #1976d2; padding: 4px 8px; border-radius: 12px; font-size: 12px;">R</span>
+                    <span style="background: #e3f2fd; color: #1976d2; padding: 4px 8px; border-radius: 12px; font-size: 12px;">SQL</span>
+                  </div>
+                </div>
+                <div>
+                  <h4 style="color: #333; margin-bottom: 10px;">Frameworks & Libraries</h4>
+                  <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+                    <span style="background: #f3e5f5; color: #7b1fa2; padding: 4px 8px; border-radius: 12px; font-size: 12px;">TensorFlow</span>
+                    <span style="background: #f3e5f5; color: #7b1fa2; padding: 4px 8px; border-radius: 12px; font-size: 12px;">PyTorch</span>
+                    <span style="background: #f3e5f5; color: #7b1fa2; padding: 4px 8px; border-radius: 12px; font-size: 12px;">React</span>
+                    <span style="background: #f3e5f5; color: #7b1fa2; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Node.js</span>
+                    <span style="background: #f3e5f5; color: #7b1fa2; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Django</span>
+                    <span style="background: #f3e5f5; color: #7b1fa2; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Flask</span>
+                  </div>
+                </div>
+                <div>
+                  <h4 style="color: #333; margin-bottom: 10px;">Tools & Technologies</h4>
+                  <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+                    <span style="background: #e8f5e8; color: #2e7d32; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Git</span>
+                    <span style="background: #e8f5e8; color: #2e7d32; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Docker</span>
+                    <span style="background: #e8f5e8; color: #2e7d32; padding: 4px 8px; border-radius: 12px; font-size: 12px;">AWS</span>
+                    <span style="background: #e8f5e8; color: #2e7d32; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Jupyter</span>
+                    <span style="background: #e8f5e8; color: #2e7d32; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Linux</span>
+                    <span style="background: #e8f5e8; color: #2e7d32; padding: 4px 8px; border-radius: 12px; font-size: 12px;">MongoDB</span>
+                  </div>
+                </div>
+                <div>
+                  <h4 style="color: #333; margin-bottom: 10px;">Data Science & ML</h4>
+                  <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+                    <span style="background: #fff3e0; color: #f57c00; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Pandas</span>
+                    <span style="background: #fff3e0; color: #f57c00; padding: 4px 8px; border-radius: 12px; font-size: 12px;">NumPy</span>
+                    <span style="background: #fff3e0; color: #f57c00; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Scikit-learn</span>
+                    <span style="background: #fff3e0; color: #f57c00; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Matplotlib</span>
+                    <span style="background: #fff3e0; color: #f57c00; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Seaborn</span>
+                    <span style="background: #fff3e0; color: #f57c00; padding: 4px 8px; border-radius: 12px; font-size: 12px;">OpenCV</span>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
         
         <br>
         <br>
