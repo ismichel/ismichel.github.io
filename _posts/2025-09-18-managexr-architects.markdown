@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "ElectriGuide: AI-Powered Electrician Assistant (ManageXR)"
-date: 2025-09-18 10:00:00 +00:00
-image: /images/intro.jpg
+title: "ElectriGuide: AI-Powered Electrician Assistant"
+date: 2025-06-18 10:00:00 +00:00
+image: /images/electriguide/electriguide.jpeg
 categories: other
 author: "Isabel Michel"
 authors: "Isabel Michel, Team ARchitects"
