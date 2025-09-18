@@ -7,13 +7,13 @@ categories: other
 author: "Isabel Michel"
 authors: "Isabel Michel, Team ARchitects"
 course: "CS 210: Software Project Experience"
-website: /2025-ManageXR-1.wiki/The-ARchitects-Wiki.md
+website: /architects_wiki.html
 paper: 
 video: 
 code: https://github.com/cs210/2025-ManageXR-1
 ---
 
-An AI-powered mobile assistant that guides electricians through installations with chat, computer vision checks, and step-by-step AR-enhanced instructions.
+An AI-powered mobile assistant that guides electricians through installations with chat, computer vision checks, and step-by-step instructions.
 
 Below are quick links into the project wiki:
 

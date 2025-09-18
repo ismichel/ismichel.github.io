@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The ARchitects — Project Wiki</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent:#60a5fa; --glass: rgba(255,255,255,0.03);
+      --container:1200px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Segoe UI,Arial; margin:0; color:#e6eef8; background:linear-gradient(180deg,#071021 0%, #071829 100%); -webkit-font-smoothing:antialiased}
+    .wrap{max-width:var(--container);margin:32px auto;padding:28px}
+
+    header{display:flex;align-items:center;gap:18px}
+    .logo{display:flex;flex-direction:column}
+    .title{font-weight:800;font-size:20px;letter-spacing:-0.3px}
+    .subtitle{font-size:13px;color:var(--muted);margin-top:3px}
+
+    nav{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px}
+    .btn{background:var(--glass);padding:8px 12px;border-radius:10px;text-decoration:none;color:var(--accent);font-weight:600;border:1px solid rgba(255,255,255,0.03)}
+
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;margin-top:22px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    h1{margin:0;font-size:28px}
+    p.lead{color:var(--muted);line-height:1.5}
+
+    .media-row{display:flex;gap:12px;margin-top:12px}
+    .media-row img{width:100%;height:auto;border-radius:8px;object-fit:cover}
+    .links a{display:inline-block;margin-right:12px;color:#fff;text-decoration:none;background:rgba(255,255,255,0.03);padding:8px 10px;border-radius:8px;border:1px solid rgba(255,255,255,0.02)}
+
+    main{display:grid;grid-template-columns:2fr 1fr;gap:24px;margin-top:22px}
+    section h2{margin-top:0}
+    ul{line-height:1.6}
+
+    .resources a{display:block;padding:10px;border-radius:8px;background:rgba(255,255,255,0.02);margin-bottom:8px;color:#dbeafe;text-decoration:none}
+
+    table{width:100%;border-collapse:collapse;margin-top:8px}
+    th,td{padding:10px;border-bottom:1px solid rgba(255,255,255,0.03);vertical-align:middle}
+    th{background:rgba(255,255,255,0.02);text-align:left}
+    .photo{border-radius:8px}
+
+    .skills-table td{font-size:13px;color:var(--muted)}
+
+    footer{margin-top:34px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* Responsiveness */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      main{grid-template-columns:1fr}
+      .media-row{flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">
+        <div class="title">The ARchitects Wiki</div>
+        <div class="subtitle">ElectriGuide — AR training & verification for electricians</div>
+      </div>
+    </header>
+
+    <nav>
+      <a class="btn" href="/2025-ManageXR-1.wiki/Home.html">Home</a>
+      <a class="btn" href="/2025-ManageXR-1.wiki/Quick-Start.html">Quick Start</a>
+      <a class="btn" href="/2025-ManageXR-1.wiki/Real-Customer-Profile.html">Real Customer Profile</a>
+      <a class="btn" href="/2025-ManageXR-1.wiki/Team-Coding-Standards-(March-1st).html">Team Coding Standards</a>
+    </nav>
+
+    <div class="hero">
+      <div class="card">
+        <h1>Welcome to the ARchitects Wiki 🏗️</h1>
+        <p class="lead">⭐️ We are the ARchitects! ⭐️<br>We built <strong>ElectriGuide</strong>, an AI-powered mobile app that guides electricians through every step of an installation. The assistant chats with users to understand the task and their setup, analyzes uploaded photos, and delivers a clear, interactive walkthrough with visual aids. Users can snap images at each stage and receive verification + corrective feedback in real time.</p>
+
+        <div class="links">
+          <a href="https://drive.google.com/file/d/16mEy40n8J93LwHZB9ewkeZlfqhivYfHq/view?usp=sharing" target="_blank">Watch launch video</a>
+          <a href="https://drive.google.com/file/d/1SZnIBFlimnHjDt8bIu89k0kQDumQvoPr/view?usp=sharing" target="_blank">See latest walkthrough</a>
+        </div>
+
+        <div class="media-row" style="margin-top:16px">
+          <img src="https://github.com/user-attachments/assets/b8dd66de-167e-4a56-9a57-bcc7b7c1ef4d" alt="IMG_9922" />
+          <img src="https://github.com/user-attachments/assets/0dd11fbe-ca1c-4f23-b1a6-ccaee4e01f47" alt="IMG_9922" />
+          <img src="https://github.com/user-attachments/assets/1671bc13-4c59-416f-9999-af475e300be9" alt="IMG_9922" />
+        </div>
+      </div>
+
+      <aside class="card">
+        <h3 style="margin:0 0 8px 0">Quick facts</h3>
+        <p style="color:var(--muted);margin:0 0 8px 0">Target users: Apprenticeship programs & field electricians</p>
+        <ul>
+          <li>Scalable lab training</li>
+          <li>Just-in-time field support</li>
+          <li>Camera-based verification & feedback</li>
+        </ul>
+      </aside>
+    </div>
+
+    <main>
+      <section>
+        <div class="card">
+          <h2>Project Context</h2>
+          <h3>Problem</h3>
+          <ul>
+            <li><strong>Major shortage of electricians:</strong> Demand is growing rapidly while experienced electricians are retiring faster than apprentices are entering the field.</li>
+            <li><strong>Training bottleneck:</strong> Apprenticeship programs are resource-constrained (many students per instructor), limiting hands-on mentorship.</li>
+            <li><strong>Emerging-tech skills gap:</strong> New installations (EV chargers, solar, data centers) require upskilling beyond traditional wiring knowledge.</li>
+          </ul>
+
+          <h3>Target Users</h3>
+          <ol>
+            <li><strong>Apprenticeship programs</strong> — vocational schools, unions, non-union contractors expanding cohorts but limited by instructor capacity.</li>
+            <li><strong>Field electricians</strong> — journeymen and techs needing just-in-time guidance for unfamiliar, high-tech installs.</li>
+          </ol>
+
+          <h3>Use Cases</h3>
+          <ul>
+            <li><strong>Scalable lab training:</strong> Replace one-on-one bench supervision with guided exercises and remote instructor dashboards.</li>
+            <li><strong>Just-in-time field support:</strong> Mobile step-by-step wiring instructions with camera verification for solar inverters, EV chargers, and data-center circuits.</li>
+        </ul>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h2>Software Fair & Launch Materials</h2>
+          <div class="resources">
+            <a href="https://docs.google.com/presentation/d/1UDb94wgoYWxtqcszjfUwSQSWIrk2N1C-ET9hDIyvBPk/edit?usp=sharing" target="_blank">Presentation</a>
+            <a href="https://drive.google.com/file/d/1SZnIBFlimnHjDt8bIu89k0kQDumQvoPr/view?usp=sharing" target="_blank">Final Demo</a>
+            <a href="https://docs.google.com/document/d/1smFnzVi93ZC42OSt0p_tZhVh5VuVXvxKVcHLq9gNae8/edit?usp=sharing" target="_blank">Project Experience Reflection</a>
+            <a href="https://docs.google.com/document/d/1g8LSNTRzKWDlLeZU1g99as9Ak_kDBqbuWkBQMluIOdQ/edit?usp=sharing" target="_blank">KPIs Documentation</a>
+            <a href="https://drive.google.com/file/d/16mEy40n8J93LwHZB9ewkeZlfqhivYfHq/view?usp=sharing" target="_blank">Launch Video</a>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h2>Project Development</h2>
+          <ul>
+            <li><a href="https://docs.google.com/document/d/1MGvwNCvhZOHb74Lqd3D03i3z1kE6rGZMHJHxQZ_Vj7E/edit?usp=sharing" target="_blank">Definitions of Success</a></li>
+            <li><a href="https://docs.google.com/document/d/1RnP0jrN56R25MG9xFltffGm_OgmkRvEpUp53WOTN4hY/edit?pli=1&tab=t.0" target="_blank">OKRs and KPIs</a></li>
+            <li><a href="https://docs.google.com/document/d/1ytwVhXohQSm-mFSmM6uF4p0nib1y0ZfbBLZgYfvvXp8/edit?tab=t.0" target="_blank">ManageXR PRD</a></li>
+            <li><a href="https://github.com/cs210/2025-ManageXR-1/wiki" target="_blank">Documentation at the GitHub Wiki</a></li>
+            <li><a href="https://github.com/cs210/2025-ManageXR-1" target="_blank">Code Repository</a></li>
+          </ul>
+        </div>
+
+      </section>
+
+      <aside>
+        <div class="card">
+          <h3>User Outreach & Feedback</h3>
+          <div class="resources">
+            <a href="https://docs.google.com/spreadsheets/d/1vRcwF5Z-RkqcxzYJPux4zsgIle1_-BXCVUvtrC4IB5g/edit?usp=sharing" target="_blank">User Outreach Tracking</a>
+            <a href="https://docs.google.com/document/d/1obdN03A6GGzzxWNVy6RHrmz0krVUxJwB_EifeSlgNCs/edit?tab=t.0" target="_blank">Outreach Scripts & Templates</a>
+            <a href="https://docs.google.com/document/d/1JwOlOkaNOpa7XWsbs2dKZN3cwjA04b1lrcEwyIyhZWg/edit?tab=t.0" target="_blank">Meeting with Control Panels Lead</a>
+            <a href="https://docs.google.com/document/d/1NZOmqyGm4bFKTCJNCzv0oDx1dxNPGi35yiUSy3dayeE/edit?pli=1&tab=t.0#heading=h.7089mbibstm8" target="_blank">User Testing Flow</a>
+            <a href="https://docs.google.com/document/d/1S1KoeWqbd-k2dTxUNquQRO5UdXZ2OlQf7rk73Rl4O7Q/edit?usp=sharing" target="_blank">Real Customer Profile</a>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h3>Team</h3>
+          <table>
+            <thead>
+              <tr><th>Name</th><th>Email</th><th>SuNET</th><th>Photo</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Alice Liu</td>
+                <td>alicel1@stanford.edu</td>
+                <td>alicel1</td>
+                <td><img class="photo" src="https://github.com/user-attachments/assets/4bd4609c-50cc-4a0e-b007-d8a3ac92f691" alt="Alice" width="80"/></td>
+              </tr>
+              <tr>
+                <td>Angela Mao</td>
+                <td>angmao@stanford.edu</td>
+                <td>angmao</td>
+                <td><img class="photo" src="https://github.com/user-attachments/assets/bb579be2-1b11-40bf-9161-280bee3ed6f1" alt="Angela" width="80"/></td>
+              </tr>
+              <tr>
+                <td>Arjun Jain</td>
+                <td>arjunj@stanford.edu</td>
+                <td>arjunj</td>
+                <td><img class="photo" src="https://github.com/user-attachments/assets/8c3d04e0-857c-4544-b882-626c8e191dd6" alt="Arjun" width="80"/></td>
+              </tr>
+              <tr>
+                <td>Chris Gu</td>
+                <td>cgu26@stanford.edu</td>
+                <td>cgu26</td>
+                <td><img class="photo" src="https://github.com/user-attachments/assets/54a219ee-721f-4e3f-911b-7ab68f9d7c20" alt="Chris" width="80"/></td>
+              </tr>
+              <tr>
+                <td>Isabel Michel</td>
+                <td>imichel@stanford.edu</td>
+                <td>imichel</td>
+                <td><img class="photo" src="https://github.com/user-attachments/assets/43bf40f0-a625-4fe6-8480-85db8443640c" alt="Isabel" width="80"/></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h3>Team Skills Matrix</h3>
+          <table class="skills-table">
+            <thead>
+              <tr><th>Member</th><th>Skills</th><th>Traits</th><th>Desired Growth</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Alice</td>
+                <td>AR/VR, Backend, Unity, C++, Graphics</td>
+                <td>Creative, problem-solver</td>
+                <td>Optimizing code, building polished systems</td>
+              </tr>
+              <tr>
+                <td>Angela</td>
+                <td>Frontend, backend, needfinding, UI/UX (Figma), prototyping</td>
+                <td>Organized, creative, detail-oriented</td>
+                <td>Learn AR/VR applications</td>
+              </tr>
+              <tr>
+                <td>Arjun</td>
+                <td>Backend dev, ML/AI, product mgmt</td>
+                <td>Ambitious, strong communicator</td>
+                <td>Building products from scratch</td>
+              </tr>
+              <tr>
+                <td>Chris</td>
+                <td>ML/AI, frontend, backend, UI/UX, product mgmt</td>
+                <td>Committed, detail-oriented</td>
+                <td>UI/UX design, product development</td>
+              </tr>
+              <tr>
+                <td>Isabel</td>
+                <td>Backend, ML/CV, Unity, Data visualization, PM</td>
+                <td>Detail-oriented, growth mindset</td>
+                <td>Unity, UI/UX, software development</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </aside>
+    </main>
+
+    <footer>
+      <p>Made by the ARchitects — ElectriGuide. Documentation & resources linked above. View the project on <a href="https://github.com/cs210/2025-ManageXR-1/wiki" target="_blank" style="color:var(--accent)">GitHub Wiki</a>.</p>
+    </footer>
+  </div>
+</body>
+</html>
