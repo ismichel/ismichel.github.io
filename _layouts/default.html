@@ -164,10 +164,26 @@
                 {% if post.demo_video %}
                 <h4 style="color: #333;">Demo Video</h4>
                 <div style="text-align: center; margin: 10px 0;">
-                  <video controls style="max-width: 100%; height: auto; border-radius: 8px;">
-                    <source src="{{post.demo_video}}" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
+                  {% assign demo = post.demo_video %}
+                  {% if demo contains 'youtube.com' or demo contains 'youtu.be' %}
+                    {% comment %} Extract YouTube video ID from common URL patterns {% endcomment %}
+                    {% assign vid = '' %}
+                    {% if demo contains 'youtu.be/' %}
+                      {% assign parts = demo | split: 'youtu.be/' %}
+                      {% assign vid = parts[1] | split: '?' | first %}
+                    {% elsif demo contains 'v=' %}
+                      {% assign parts = demo | split: 'v=' %}
+                      {% assign vid = parts[1] | split: '&' | first %}
+                    {% endif %}
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                      <iframe src="https://www.youtube.com/embed/{{ vid }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+                    </div>
+                  {% else %}
+                    <video controls style="max-width: 100%; height: auto; border-radius: 8px;">
+                      <source src="{{post.demo_video}}" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                  {% endif %}
                 </div>
                 {% endif %}
                 
