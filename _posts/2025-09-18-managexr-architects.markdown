@@ -7,7 +7,7 @@ categories: other
 author: "Isabel Michel"
 authors: "Isabel Michel, Team ARchitects"
 course: "CS 210: Software Project Experience"
-website: /architects_wiki.html
+website: /electriguide.html
 paper: 
 video: https://drive.google.com/file/d/1SZnIBFlimnHjDt8bIu89k0kQDumQvoPr/view?usp=sharing
 code: https://github.com/cs210/2025-ManageXR-1
