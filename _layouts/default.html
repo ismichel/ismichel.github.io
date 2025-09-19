@@ -90,7 +90,7 @@
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <tr>
             <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2 style="background: rgb(174, 207, 188)">Technical Projects</h2>
+              <h2 style="background: rgb(174, 207, 188)">Software Projects</h2>
               <p> A showcase of my technical work including coursework, side projects, and research. Visit the project webpage to explore key findings, takeaways, and the pivots that shaped the final outcome. Click "Learn More" for an overview of the prototype. 
               </p>
             </td>
@@ -202,6 +202,184 @@
         <br>
         <br>
         <br>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          <tr>
+            <td style="padding:2.5%;width:100%;vertical-align:middle">
+              <h2 style="background: rgb(174, 207, 188)">Software Projects</h2>
+              <p> A showcase of my technical work including coursework, side projects, and research. Visit the project webpage to explore key findings, takeaways, and the pivots that shaped the final outcome. Click "Learn More" for an overview of the prototype. 
+              </p>
+            </td>
+          </tr>
+        </table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          {% for post in site.posts %}
+          {% for cat in post.categories %}
+          {% if cat == 'other' %}
+          <tr>
+            <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
+              <img src="{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+            </td>
+            <td style="padding:2.5%;width:75%;vertical-align:middle">
+              <h3>{{post.title}}</h3>
+              <br>
+              <em>{{post.authors}}</em>
+
+              <br>
+              <em>{{post.course}}</em>
+              <br>
+              {{ post.date | date: "%Y-%m" }}
+
+              <br>
+              <div style="margin: 10px 0;">
+                {% if post.website %}
+                <a href="{{post.website}}" style="background: #f0f0f0; padding: 4px 8px; border-radius: 4px; text-decoration: none; margin-right: 5px; font-size: 12px;">website</a>
+                {% endif %}
+                {% if post.paper %}
+                <a href="{{post.paper}}" style="background: #f0f0f0; padding: 4px 8px; border-radius: 4px; text-decoration: none; margin-right: 5px; font-size: 12px;">paper</a>
+                {% endif %}
+                {% if post.video %}
+                <a href="{{post.video}}" style="background: #f0f0f0; padding: 4px 8px; border-radius: 4px; text-decoration: none; margin-right: 5px; font-size: 12px;">video</a>
+                {% endif %}
+                {% if post.code %}
+                <a href="{{post.code}}" style="background: #f0f0f0; padding: 4px 8px; border-radius: 4px; text-decoration: none; margin-right: 5px; font-size: 12px;">code</a>
+                {% endif %}
+                {% if post.poster %}
+                <a href="{{post.poster}}" style="background: #f0f0f0; padding: 4px 8px; border-radius: 4px; text-decoration: none; margin-right: 5px; font-size: 12px;">poster</a>
+                {% endif %}
+                {% if post.slides %}
+                <a href="{{post.slides}}" style="background: #f0f0f0; padding: 4px 8px; border-radius: 4px; text-decoration: none; margin-right: 5px; font-size: 12px;">slides</a>
+                {% endif %}
+              </div>
+              <p></p>
+              {{ post.excerpt }}
+              
+              {% if post.detailed_description or post.demo_video or post.creation_process %}
+              <div style="margin-top: 15px;">
+                <button onclick="toggleProjectDetails('{{post.title | slugify}}')" style="background: #4CAF50; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 14px;">
+                  Learn More
+                </button>
+              </div>
+              
+              <div id="details-{{post.title | slugify}}" style="display: none; margin-top: 15px; padding: 15px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #4CAF50;">
+                {% if post.detailed_description %}
+                <h4 style="margin-top: 0; color: #333;">Project Overview</h4>
+                <p>{{post.detailed_description}}</p>
+                {% endif %}
+                
+                {% if post.creation_process %}
+                <h4 style="color: #333;">Creation Process</h4>
+                <p>{{post.creation_process}}</p>
+                {% endif %}
+                
+                {% if post.demo_video %}
+                <h4 style="color: #333;">Demo Video</h4>
+                <div style="text-align: center; margin: 10px 0;">
+                  {% assign demo = post.demo_video %}
+                  {% if demo contains 'youtube.com' or demo contains 'youtu.be' %}
+                    {% comment %} Extract YouTube video ID from common URL patterns {% endcomment %}
+                    {% assign vid = '' %}
+                    {% if demo contains 'youtu.be/' %}
+                      {% assign parts = demo | split: 'youtu.be/' %}
+                      {% assign vid = parts[1] | split: '?' | first %}
+                    {% elsif demo contains 'v=' %}
+                      {% assign parts = demo | split: 'v=' %}
+                      {% assign vid = parts[1] | split: '&' | first %}
+                    {% endif %}
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                      <iframe src="https://www.youtube.com/embed/{{ vid }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+                    </div>
+                  {% else %}
+                    <video controls style="max-width: 100%; height: auto; border-radius: 8px;">
+                      <source src="{{post.demo_video}}" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                  {% endif %}
+                </div>
+                {% endif %}
+                
+                {% if post.technologies %}
+                <h4 style="color: #333;">Technologies Used</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+                  {% for tech in post.technologies %}
+                  <span style="background: #e3f2fd; color: #1976d2; padding: 4px 8px; border-radius: 12px; font-size: 12px;">{{tech}}</span>
+                  {% endfor %}
+                </div>
+                {% endif %}
+              </div>
+              {% endif %}
+            </td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+          {% endfor %}
+        </table>
+
+        <br>
+        <br>
+        <br>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          <tr>
+            <td style="padding:2.5%;width:100%;vertical-align:middle">
+              <h2 style="background: rgb(234, 194, 234)">ML Projects</h2>
+              <p>
+                [Description of interests]
+              </p>
+            </td>
+          </tr>
+        </table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+
+          {% for post in site.posts %}
+          {% for cat in post.categories %}
+          {% if cat == 'research' %}
+          <tr>
+            <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
+              <img src="{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
+            </td>
+            <td style="padding:2.5%;width:75%;vertical-align:middle">
+              <h3>{{post.title}}</h3>
+              <br>
+              <em>{{post.authors}}</em>
+
+              <br>
+              <em>{{post.venue}}</em>, {{ post.date | date: "%Y" }}
+              <br>
+              {% if post.paper %}
+              <a href="{{post.paper}}">paper</a> /
+              {% endif %}
+              {% if post.video %}
+              <a href="{{post.video}}">video</a> /
+              {% endif %}
+              {% if post.code %}
+              <a href="{{post.code}}">code</a> /
+              {% endif %}
+              {% if post.poster %}
+              <a href="{{post.poster}}">poster</a> /
+              {% endif %}
+              {% if post.slides %}
+              <a href="{{post.slides}}">slides</a> /
+              {% endif %}
+              {% if post.website %}
+              <a href="{{post.website}}">website</a> /
+              {% endif %}
+              {% if post.youtube %}
+              <a href="{{post.youtube}}">youtube</a> /
+              {% endif %}
+              <p></p>
+              {{ post.excerpt }}
+            </td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+          {% endfor %}
+        </table>
+
+        <br>
+        <br>
+        <br>
+
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <tr>
             <td style="padding:2.5%;width:100%;vertical-align:middle">
