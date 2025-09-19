@@ -12,7 +12,7 @@ creation_process: "The project began with extensive needfinding interviews to un
 demo_video: "https://www.youtube.com/watch?v=8uevUWEh9kc"
 technologies: ["Snap Lens Studio", "AR/VR Development", "Adobe Premiere Pro", "Adobe Illustrator", "3D Modeling", "User Research", "Prototyping"]
 code: https://github.com/ismichel/memories-ar-project
-website: /memories-project-documentation.html
+website: /memories.html
 video: https://www.youtube.com/watch?v=8uevUWEh9kc
 ---
 
