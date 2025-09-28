@@ -98,7 +98,12 @@
     .name {
       font-size: 4rem;
       font-weight: 700;
-      background: linear-gradient(90deg, #C8565B, #8C3F46);
+      background: linear-gradient(
+        90deg,
+        #C8565B 0%,   /* light pink left */
+        #8C3F46 50%,  /* dark red middle */
+        #C8565B 100%  /* light pink right */
+      );
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
