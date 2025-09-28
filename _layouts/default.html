@@ -224,6 +224,104 @@
       }
     }
 
+    /* Welcome Section */
+    .welcome-section {
+      margin-top: 80px;
+      padding: 60px 0;
+    }
+
+    .welcome-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .welcome-text {
+      text-align: left;
+    }
+
+    .welcome-heading {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #2c1810;
+      margin: 0 0 30px 0;
+      line-height: 1.2;
+    }
+
+    .welcome-text p {
+      font-size: 1.1rem;
+      color: #495057;
+      line-height: 1.6;
+      margin: 0 0 20px 0;
+    }
+
+    .highlight {
+      color: #d63384;
+      font-weight: 600;
+    }
+
+    .connect-button {
+      display: inline-block;
+      background-color: white;
+      color: #2c1810;
+      padding: 12px 24px;
+      border: 1px solid #e9ecef;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      margin-top: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .connect-button:hover {
+      background-color: #f8f9fa;
+      border-color: #d63384;
+      color: #d63384;
+    }
+
+    .profile-card {
+      background-color: white;
+      border-radius: 12px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    .profile-image {
+      margin-bottom: 30px;
+    }
+
+    .emoji-circle {
+      width: 120px;
+      height: 120px;
+      background-color: rgba(255, 182, 193, 0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      margin: 0 auto;
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #2c1810;
+      margin: 0 0 10px 0;
+    }
+
+    .card-subtitle {
+      font-size: 1rem;
+      color: #495057;
+      margin: 0;
+    }
+
     /* Footer */
     .footer {
       margin-top: 80px;
@@ -259,12 +357,61 @@
     }
 
     @media (max-width: 768px) {
+      .welcome-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+      }
+
+      .welcome-text {
+        text-align: center;
+      }
+
+      .welcome-heading {
+        font-size: 2rem;
+      }
+
+      .profile-card {
+        max-width: 250px;
+        padding: 30px;
+      }
+
+      .emoji-circle {
+        width: 100px;
+        height: 100px;
+        font-size: 2.5rem;
+      }
+
       .social-icons {
         gap: 25px;
       }
     }
 
     @media (max-width: 480px) {
+      .welcome-section {
+        margin-top: 60px;
+        padding: 40px 0;
+      }
+
+      .welcome-heading {
+        font-size: 1.8rem;
+      }
+
+      .welcome-text p {
+        font-size: 1rem;
+      }
+
+      .profile-card {
+        max-width: 200px;
+        padding: 20px;
+      }
+
+      .emoji-circle {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+      }
+
       .social-icons {
         gap: 20px;
       }
@@ -315,6 +462,25 @@
       <a href="/#projects" class="cta-button">Explore My Work</a>
     </main>
 
+    <!-- Welcome Section -->
+    <section class="welcome-section">
+      <div class="welcome-content">
+        <div class="welcome-text">
+          <h2 class="welcome-heading">Hey there! 👋</h2>
+          <p>I'm a passionate software engineer and AR/VR developer, where I build immersive experiences that push the boundaries of technology. When I'm not coding, you'll find me conducting research on <span class="highlight">human-computer interaction</span> and exploring how augmented reality can transform our daily lives.</p>
+          <p>I love sharing stories, building communities, and helping others navigate their own technological journeys. Whether it's through code, conversations, or content, I'm always looking for ways to make an impact in the world of immersive computing.</p>
+          <a href="/#contact" class="connect-button">Let's Connect →</a>
+        </div>
+        <div class="profile-card">
+          <div class="profile-image">
+            <div class="emoji-circle">👩‍💻</div>
+          </div>
+          <h3 class="card-title">Always Building</h3>
+          <p class="card-subtitle">Creating solutions that matter</p>
+        </div>
+      </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
       <div class="social-icons">
@@ -345,7 +511,7 @@
         </a>
       </div>
       <div class="copyright">
-        © 2024 {{ site.name }}. Built with <span style="color: #d63384;">❤️</span> and lots of coffee.
+        © 2024 {{ site.name }}. Built with <span style="color: #d63384;">❤️</span>.
       </div>
     </footer>
   </div>
